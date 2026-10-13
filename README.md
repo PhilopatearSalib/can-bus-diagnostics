@@ -4,6 +4,8 @@
 
 B.Sc. course project for *Automotive Embedded Networking*, Ain Shams University, September 2019.
 
+▶ **[Watch the demo video](https://www.youtube.com/watch?v=dRj1WanOhFA)**
+
 ## What it demonstrates
 
 - **CAN communication between two microcontrollers.** Two TM4C123GH6PM (ARM Cortex-M4F) nodes on a 500 kbit/s bus, using interrupt-driven transmit and receive with error detection.
@@ -161,7 +163,9 @@ The first commit contains the code exactly as submitted in 2019, without the TI 
 
 ## Demo
 
-> **TODO (Philo):** add a photo of the two LaunchPads on the bus, or a short GIF of the LED stepping alongside the console output. Suggested file: `docs/images/demo.jpg`, then replace this note with `![Two LaunchPads on a CAN bus](docs/images/demo.jpg)`.
+[![Demo video: both nodes running on real hardware](https://img.youtube.com/vi/dRj1WanOhFA/hqdefault.jpg)](https://www.youtube.com/watch?v=dRj1WanOhFA)
+
+Both LaunchPads running on a CAN bus (video on YouTube).
 
 ## Authors
 
