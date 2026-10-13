@@ -70,6 +70,8 @@ Connect **CANH to CANH** and **CANL to CANL** between the two transceivers, and 
 
 The project was built in **Code Composer Studio (CCS)** with the TI ARM compiler, against **TivaWare for C Series 2.1.4.178** (the version recorded in the original TI files).
 
+> **Build check (2026).** Both nodes were rebuilt with `arm-none-eabi-gcc` 13.2 against TivaWare 2.1.4.178. Every source compiles and both firmware images link with no unresolved symbols, so the sources in this repository are complete. GCC's warnings are all GCC-specific rather than missing code: it does not recognise TI's `CHECK_MISRA` pragmas, it expects `int main`, and it flags the two `Switches.c` lines listed in [docs/protocol.md](docs/protocol.md#notes-on-observed-behaviour). The original CCS build was not re-run, because TI's compiler is not available in the check environment.
+
 ### TI files this repository does not include
 
 TI's license terms restrict redistributing some TivaWare files, so the repository ships only our own sources. You get the rest from TivaWare ([ti.com/tool/SW-TM4C](https://www.ti.com/tool/SW-TM4C)) or from CCS itself:
