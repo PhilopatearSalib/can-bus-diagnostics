@@ -4,6 +4,8 @@ The first commit in this repository contains the project as submitted in Septemb
 
 **Summary:** the compiled program is unchanged. All 18 `.c` files produce identical object code before and after the cleanup (checked with `arm-none-eabi-gcc` 13.2). No lines were added to or removed from the original source files, so the line numbers cited in the report's MISRA section still match.
 
+The author lines in each original file header, and the report's cover page, credit only Philopatear Ashraf (now Philopatear Salib). The cover page also no longer shows student ID numbers. These edits are already present in the first commit, and they keep every header at its original line count.
+
 ## Removed
 
 | File | Node | Why |
@@ -19,7 +21,7 @@ The first commit in this repository contains the project as submitted in Septemb
 |---|---|---|
 | `CAN State Machine/` | `ecu-state-machine/` | No spaces, consistent naming |
 | `Diagnostic Tool/` | `diagnostic-tool/` | No spaces, consistent naming |
-| `Final Project.pdf` | `docs/Final_Project_Report.pdf` | Grouped with the documentation. Content unchanged: the "Data Fromat" typo remains because the Word source is not available |
+| `Final Project.pdf` | `docs/Final_Project_Report.pdf` | Grouped with the documentation. Pages 2–24 are unchanged; the "Data Fromat" typo remains because the Word source is not available |
 
 ## Added
 
@@ -35,7 +37,7 @@ The first commit in this repository contains the project as submitted in Septemb
 
 ## Modified
 
-**Every one of the 33 original source files was converted from CRLF to LF line endings.** The table below lists the other changes. "Indentation" means leading whitespace only. "Comments" means comment text or comment-box alignment only. Original author headers were left untouched.
+**Every one of the 33 original source files was converted from CRLF to LF line endings.** The table below lists the other changes. "Indentation" means leading whitespace only. "Comments" means comment text or comment-box alignment only. Nothing else in the file headers was changed.
 
 | File | Indentation | Comments | Code |
 |---|:-:|:-:|---|
@@ -54,7 +56,7 @@ The first commit in this repository contains the project as submitted in Septemb
 | `diagnostic-tool/ReadSession.c` | ✓ | | |
 | `diagnostic-tool/Receive.c` | ✓ | | |
 | `diagnostic-tool/Receive.h` | | ✓ "Receiving el Response" → "Receiving the Response" | |
-| `diagnostic-tool/Switches.c` | ✓ | | |
+| `diagnostic-tool/Switches.c` | ✓ | | Line 40: `(uint32_t*)GPIO_LOCK_KEY` → `(uint32_t)GPIO_LOCK_KEY`. Same value and identical object code; compiles on GCC 14+, which rejects pointer-to-integer conversion |
 | `diagnostic-tool/UART_Init.h` | | ✓ "Non- Reentrant" | Bare `#include "interrupt.h"` replaced by a comment. The same header is already included as `"driverlib/interrupt.h"`, and the local copy was removed |
 | `diagnostic-tool/WriteSession.c` | ✓ | ✓ "Clock wise" → "Clockwise" | |
 | `diagnostic-tool/WriteSession.h` | | ✓ "Non- Reentrant" | |
@@ -65,5 +67,5 @@ All other source files received only the line-ending conversion: `ecu-state-mach
 
 - Program output strings, such as `"Write - Clock Wise"`.
 - Function and variable names.
-- The behaviour quirks listed in [protocol.md](protocol.md#notes-on-observed-behaviour), including the 4-byte request length and the `Switches.c` line that newer GCC versions reject.
+- The behaviour quirks listed in [protocol.md](protocol.md#notes-on-observed-behaviour), including the 4-byte request length.
 - Inaccurate function comments that are not typos. For example, the ECU's `Get_MSG_ID` / `Get_MSG_Data` comments say "Outputs: void", and the Diagnostic Tool's `Send_Command` comment says `int obj`.

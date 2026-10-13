@@ -114,4 +114,4 @@ These describe what the code does. None of them has been changed.
 4. **Timeout.** The timeout is a fixed `SysCtlDelay` of about 500 ms after sending, followed by a check of the receive flag. It is not a hardware timer.
 5. **Initial state.** The ECU lights green at start-up, while its internal state-machine position starts at red. As a result, the first `0x31` shows blue, and the first `0x32` shows green (no visible change).
 6. **Writing a colour** (`0x2E` with `0x01`–`0x03`) changes the LED but not the state-machine position. The next step continues from the previous position.
-7. **Compiler portability (Diagnostic Tool, `Switches.c`).** Line 40 assigns `(uint32_t*)GPIO_LOCK_KEY` to an integer register, which is the MISRA 11.3 deviation documented in the report. The TI compiler accepts it, and GCC 13 gives a warning. Newer GCC releases (14 and later) treat this pointer-to-integer conversion as an error by default. Line 54 declares a variable, `sw2`, that is never used.
+7. **Unused variable (Diagnostic Tool, `Switches.c`).** Line 54 declares `sw2`, which is never used. Any interrupt that is not from PF0 is treated as the PF4 button.
