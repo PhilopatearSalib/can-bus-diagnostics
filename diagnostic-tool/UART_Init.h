@@ -11,7 +11,7 @@
 #pragma CHECK_MISRA("none")
 #include <stdint.h>
 #include <stdbool.h>
-#include "interrupt.h"
+/* interrupt.h comes from "driverlib/interrupt.h" below (TivaWare) */
 #include "inc/hw_can.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/can.h"
