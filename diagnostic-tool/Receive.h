@@ -15,10 +15,10 @@ extern void Receive(uint32_t MsgID);
 /*Outputs: void                                      */
 /*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
-/*Description: Receiving the Response from Node 2 and*/
-/*             then Respond to the returned MsgID    */
-/*             and Data also it's Responsible for    */
-/*             applying the current active session   */
-/*             either Default session or Extended    */
+/*Description: Decodes the response from Node 2      */
+/*             (MsgID and data) and prints it:       */
+/*             positive, negative or session         */
+/*             control response. Does not change     */
+/*             the active session.                   */
 /*****************************************************/
 #endif /* RECEIVE_H_ */

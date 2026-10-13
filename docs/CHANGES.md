@@ -64,9 +64,21 @@ The author lines in each original file header, and the report's cover page, cred
 
 All other source files received only the line-ending conversion: `ecu-state-machine/` `Delay.c`, `InitConsole.c`, `LEDs.c`, `NegativeResponse.c`, `NegativeResponse.h`, `StateMachine.h`; and `diagnostic-tool/` `Delay.c`, `Delay.h`, `ReadSession.h`, `Switches.h`, `TimeOut.c`, `TimeOut.h`, `UART_Init.c`, `main.c`.
 
+## Corrected comments
+
+These function comments described the code inaccurately and were corrected. Only comment text changed, and no lines moved.
+
+| File | Correction |
+|---|---|
+| `ecu-state-machine/CAN0.h` | `Get_MSG_ID` and `Get_MSG_Data` said "Outputs: void"; they return the message ID and the data byte |
+| `ecu-state-machine/StateMachine.h` | Both functions also move the LED one step, not only set the direction |
+| `ecu-state-machine/NegativeResponse.c` | The comments said "Send Default/Extended Session"; the code sends negative responses |
+| `diagnostic-tool/CAN0.h` | `Send_Command`'s `obj` parameter is `uint32_t`, not `int`; `Check_Err` prints an error when the CAN error flag is set |
+| `diagnostic-tool/Receive.h` | `Receive` decodes and prints the response; it does not change the session |
+| `diagnostic-tool/Switches.c` | Line 39 configures all three RGB LED pins, not only red |
+
 ## Deliberately not changed
 
 - Program output strings, such as `"Write - Clock Wise"`.
 - Function and variable names.
 - The behaviour quirks listed in [protocol.md](protocol.md#notes-on-observed-behaviour), including the 4-byte request length.
-- Inaccurate function comments that are not typos. For example, the ECU's `Get_MSG_ID` / `Get_MSG_Data` comments say "Outputs: void", and the Diagnostic Tool's `Send_Command` comment says `int obj`.

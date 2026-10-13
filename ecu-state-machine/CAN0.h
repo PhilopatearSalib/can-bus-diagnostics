@@ -124,7 +124,7 @@ extern void Establishing_Getting_MSGs(void);
 /*****************************************************/
 /*Function Name: Get_MSG_ID                          */
 /*Inputs: Object number (ObjID)                      */
-/*Outputs: void                                      */
+/*Outputs: Received Message ID (uint32_t)            */
 /*Reentrant: Non-Reentrant                           */
 /*Synchronous: Synchronous                           */
 /*Description:Returns Message ID that's received on  */
@@ -139,7 +139,7 @@ extern uint32_t Get_MSG_ID(uint32_t ObjID);
 /*****************************************************/
 /*Function Name: Get_MSG_Data                        */
 /*Inputs: void                                       */
-/*Outputs: void                                      */
+/*Outputs: Received data byte (uint8_t)              */
 /*Reentrant: Non-Reentrant                           */
 /*Synchronous: Synchronous                           */
 /*Description:Returns Message Data that's received.  */

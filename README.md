@@ -2,7 +2,7 @@
 
 **Two TI Tiva C LaunchPads talking over CAN: a diagnostic tool sends UDS-style session, read and write requests to an ECU that runs an LED state machine. Written in layered, MISRA C:2004-checked embedded C.**
 
-B.Sc. team course project for *Automotive Embedded Networking*, Ain Shams University, September 2019.
+B.Sc. course project for *Automotive Embedded Networking*, Ain Shams University, September 2019.
 
 ▶ **[Watch the demo video](https://www.youtube.com/watch?v=dRj1WanOhFA)**
 

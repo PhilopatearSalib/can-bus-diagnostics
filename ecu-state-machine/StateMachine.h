@@ -18,8 +18,8 @@
 /*Outputs: void                                      */
 /*Reentrant: Reentrant                               */
 /*Synchronous: Synchronous                           */
-/*Description: Sets State Machine Direction to be in */
-/*             a Counter Clockwise Direction.        */
+/*Description: Sets direction to counter clockwise   */
+/*             and moves the LED one step.           */
 /*             *prev_LED is a pointer to previous LED*/
 /*             color on State Machine.               */
 /*             *CW is a pointer to State Machine     */
@@ -34,8 +34,8 @@ extern void CounterClockwise_StateMachine (int* prev_LED, uint8_t* CW);
 /*Outputs: void                                      */
 /*Reentrant: Reentrant                               */
 /*Synchronous: Synchronous                           */
-/*Description: Sets State Machine Direction to be in */
-/*             a Clockwise Direction.                */
+/*Description: Sets direction to clockwise and       */
+/*             moves the LED one step.               */
 /*             *prev_LED is a pointer to previous LED*/
 /*             color on State Machine.               */
 /*             *CW is a pointer to State Machine     */

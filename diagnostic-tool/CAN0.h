@@ -40,7 +40,7 @@ extern void Check_Err(void);
 /*Outputs: void                                      */
 /*Reentrancy:Non-Reentrant                           */
 /*Synchronous: Synchronous                           */
-/*Description:Checks if the Message is correctly set.*/
+/*Description: Prints an error if CAN errors occurred*/
 /*****************************************************/
 extern void EstablishingGettingMessage(void);
 /*****************************************************/
@@ -55,7 +55,7 @@ extern void EstablishingGettingMessage(void);
 extern void Send_Command(uint32_t obj,uint32_t MsgID, uint8_t *data);
 /*****************************************************/
 /*Function Name: Send_Command                        */
-/*Inputs: int obj, uint32_t MsgID, uint8_t *data     */
+/*Inputs: uint32_t obj, uint32_t MsgID, uint8_t *data*/
 /*Outputs: void                                      */
 /*Reentrancy: Reentrant                              */
 /*Synchronous: ASynchronous                          */

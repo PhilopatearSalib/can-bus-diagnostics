@@ -36,7 +36,7 @@ uint32_t set = 1;
 void Switches_Interrupt_Init (void)
 {
     SysCtlPeripheralEnable((uint32_t)SYSCTL_PERIPH_GPIOF);
-    GPIOPinTypeGPIOOutput((uint32_t)GPIO_PORTF_BASE, (uint8_t)GPIO_PIN_1|(uint8_t)GPIO_PIN_2|(uint8_t)GPIO_PIN_3); /*RED LED*/
+    GPIOPinTypeGPIOOutput((uint32_t)GPIO_PORTF_BASE, (uint8_t)GPIO_PIN_1|(uint8_t)GPIO_PIN_2|(uint8_t)GPIO_PIN_3); /*RGB LED pins as outputs*/
     HWREG(GPIO_PORTF_BASE+GPIO_O_LOCK) = (uint32_t)GPIO_LOCK_KEY;
     HWREG(GPIO_PORTF_BASE+GPIO_O_CR) |= (uint32_t)0x1F;
     GPIOPinTypeGPIOInput((uint32_t)GPIO_PORTF_BASE, (uint8_t)GPIO_PIN_4|(uint8_t)GPIO_PIN_0  );
