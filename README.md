@@ -48,6 +48,8 @@ This protocol is **UDS-style**, not an ISO 14229 implementation. For example, ne
 
 ## Hardware
 
+![The two EK-TM4C123GXL LaunchPads used in the project, each mounted on a carrier board with a screw terminal for the bus wires](docs/images/hardware.jpg)
+
 | Qty | Part | Notes |
 |---|---|---|
 | 2 | TI EK-TM4C123GXL LaunchPad (TM4C123GH6PM) | One per node |
@@ -65,6 +67,8 @@ This protocol is **UDS-style**, not an ISO 14229 implementation. For example, ne
 | GND | GND |
 
 Connect **CANH to CANH** and **CANL to CANL** between the two transceivers, and join the two boards' grounds.
+
+In the original build, each LaunchPad sat on a small carrier board with a 2-pin screw terminal for the bus wires, as shown in the photo.
 
 ## Building
 
@@ -180,4 +184,4 @@ The original source headers use the name Philopatear Ashraf.
 
 ## License
 
-No license has been chosen yet, so all rights are reserved by the authors until a `LICENSE` file is added. TivaWare is © Texas Instruments and is not part of this repository.
+All rights reserved. This code is published for viewing as a portfolio piece. No license is granted to copy, modify, or redistribute it. TivaWare is © Texas Instruments and is not part of this repository.
