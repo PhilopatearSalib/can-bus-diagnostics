@@ -70,7 +70,7 @@ Connect **CANH to CANH** and **CANL to CANL** between the two transceivers, and 
 
 The project was built in **Code Composer Studio (CCS)** with the TI ARM compiler, against **TivaWare for C Series 2.1.4.178** (the version recorded in the original TI files).
 
-> **Build check (2026).** Both nodes were rebuilt with `arm-none-eabi-gcc` 13.2 against TivaWare 2.1.4.178. Every source compiles and both firmware images link with no unresolved symbols, so the sources in this repository are complete. GCC's warnings are all GCC-specific rather than missing code: it does not recognise TI's `CHECK_MISRA` pragmas, it expects `int main`, and it reports one unused variable in `Switches.c`. The original CCS build was not re-run, because TI's compiler is not available in the check environment.
+> **Build check (2026).** Both nodes were rebuilt with `arm-none-eabi-gcc` 13.2 against TivaWare 2.1.4.178. Every source compiles and both firmware images link with no unresolved symbols, so the sources in this repository are complete. None of GCC's warnings point to missing code: it does not recognise TI's `CHECK_MISRA` pragmas, it expects `int main`, and it reports one unused variable in `Switches.c`. The original CCS build was not re-run, because TI's compiler is not available in the check environment.
 
 ### TI files this repository does not include
 
