@@ -19,31 +19,31 @@ void CounterClockwise_StateMachine (int* prev_LED, uint8_t* CW)
     *CW = Set_CCW;
     switch (*prev_LED)
     {
-     case Red: /*Previous LED is RED.*/
-        Turn_Off_LEDs();
-        Turn_On_Green_LEDs();
+        case Red: /*Previous LED is RED.*/
+            Turn_Off_LEDs();
+            Turn_On_Green_LEDs();
 
-        *prev_LED = Green; /*Green*/
-        SimpleDelay();
-        break;
+            *prev_LED = Green; /*Green*/
+            SimpleDelay();
+            break;
 
-    case Green:  /*Previous LED is Green.*/
-        Turn_Off_LEDs();
-        Turn_On_Blue_LEDs();
+        case Green:  /*Previous LED is Green.*/
+            Turn_Off_LEDs();
+            Turn_On_Blue_LEDs();
 
-        *prev_LED = Blue; /*Blue*/
-        SimpleDelay();
-        break;
+            *prev_LED = Blue; /*Blue*/
+            SimpleDelay();
+            break;
 
-    case Blue:  /*Previous LED is Blue.*/
-        Turn_Off_LEDs();
-        Turn_On_Red_LEDs(); /*Turn On the Red LED.*/
+        case Blue:  /*Previous LED is Blue.*/
+            Turn_Off_LEDs();
+            Turn_On_Red_LEDs(); /*Turn On the Red LED.*/
 
-        *prev_LED = Red; /*Red.*/
-        SimpleDelay();
-        break;
-    default:
-        break;
+            *prev_LED = Red; /*Red.*/
+            SimpleDelay();
+            break;
+        default:
+            break;
     }
 }
 
@@ -56,25 +56,25 @@ void Clockwise_StateMachine (int* prev_LED, uint8_t* CW)
             Turn_Off_LEDs();
             Turn_On_Blue_LEDs();
 
-           *prev_LED = Blue; /*BLue.*/
-           SimpleDelay();
-           break;
+            *prev_LED = Blue; /*BLue.*/
+            SimpleDelay();
+            break;
 
         case Green:  /*Previous LED is Green*/
-           Turn_Off_LEDs();
-           Turn_On_Red_LEDs(); /*Turn On the Red LED*/
+            Turn_Off_LEDs();
+            Turn_On_Red_LEDs(); /*Turn On the Red LED*/
 
-           *prev_LED = Red; /*Red*/
-           SimpleDelay();
-           break;
+            *prev_LED = Red; /*Red*/
+            SimpleDelay();
+            break;
 
         case Blue:  /*Previous LED is Blue*/
-           Turn_Off_LEDs();
-           Turn_On_Green_LEDs(); /*Turn On the Green LED*/
+            Turn_Off_LEDs();
+            Turn_On_Green_LEDs(); /*Turn On the Green LED*/
 
-           *prev_LED = Green; /*Green*/
-           SimpleDelay();
-           break;
+            *prev_LED = Green; /*Green*/
+            SimpleDelay();
+            break;
         default:
             break;
     }

@@ -37,20 +37,20 @@ void ReadSession (void)
     }
     else if (Order=='1') /*Direction*/
     {
-         Send_Command(obj2,Read_Session, &g_pui8Msg2);
-         DelayTimeOut();
-         if (g_bRXFlag)
-         {
-             Receive(Get_MSG_ID());
-             PrintStatus();
-         }
-         else if (!(g_bRXFlag))
-         {
+        Send_Command(obj2,Read_Session, &g_pui8Msg2);
+        DelayTimeOut();
+        if (g_bRXFlag)
+        {
+            Receive(Get_MSG_ID());
+            PrintStatus();
+        }
+        else if (!(g_bRXFlag))
+        {
             TimeOut();
-         }
-         else
-         {
-         }
+        }
+        else
+        {
+        }
     }
     else
     {

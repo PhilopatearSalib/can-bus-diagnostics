@@ -24,23 +24,23 @@ void Receive(uint32_t MsgID)
     {
         if (Get_MSG_Data() == g_pui8Msg1)
         {
-        UARTprintf("State is Red.\n");
+            UARTprintf("State is Red.\n");
         }
         else  if (Get_MSG_Data() == g_pui8Msg2)
         {
-        UARTprintf("State is Blue.\n");
+            UARTprintf("State is Blue.\n");
         }
         else  if (Get_MSG_Data() == g_pui8Msg3)
         {
-        UARTprintf("State is Green.\n");
+            UARTprintf("State is Green.\n");
         }
         else if (Get_MSG_Data() == g_pui8Msg4)
         {
-        UARTprintf("Direction is Clockwise.\n");
+            UARTprintf("Direction is Clockwise.\n");
         }
         else  if (Get_MSG_Data() == g_pui8Msg5)
         {
-        UARTprintf("Direction is Counter Clockwise.\n");
+            UARTprintf("Direction is Counter Clockwise.\n");
         }
         else
         {
@@ -53,49 +53,49 @@ void Receive(uint32_t MsgID)
     }
     else if (MsgID == positive_response3) /*Positive Response for Write session*/
     {
-       if (Get_MSG_Data() == g_pui8Msg1)
+        if (Get_MSG_Data() == g_pui8Msg1)
         {
             UARTprintf("Red is assigned.\n");
         }
-       else if (Get_MSG_Data() == g_pui8Msg2)
+        else if (Get_MSG_Data() == g_pui8Msg2)
         {
             UARTprintf("Blue is assigned.\n");
         }
-       else if (Get_MSG_Data() == g_pui8Msg3)
+        else if (Get_MSG_Data() == g_pui8Msg3)
         {
             UARTprintf("Green is assigned.\n");
         }
-       else if (Get_MSG_Data() == g_pui8Msg4)
+        else if (Get_MSG_Data() == g_pui8Msg4)
         {
             UARTprintf("Clockwise is assigned.\n");
         }
-       else if (Get_MSG_Data() == g_pui8Msg5)
+        else if (Get_MSG_Data() == g_pui8Msg5)
         {
             UARTprintf("Counter Clockwise is assigned.\n");
         }
-       else
-       {
+        else
+        {
 
-       }
-     }
+        }
+    }
     else if (MsgID == negative_response3)  /*Negative Response for Write session*/
-     {
+    {
         UARTprintf("Service Not Supported in Active Session.\n");
-     }
+    }
     else if (MsgID == positive_response1) /*Positive Response for Control session*/
-     {
-      if (Get_MSG_Data() == g_pui8Msg0)
-       {
-           UARTprintf("Read Session is only allowed.\n");
-       }
-      else if (Get_MSG_Data() == g_pui8Msg1)
-       {
-           UARTprintf("Write Session is only allowed.\n");
-       }
-      else
-      {
+    {
+        if (Get_MSG_Data() == g_pui8Msg0)
+        {
+            UARTprintf("Read Session is only allowed.\n");
+        }
+        else if (Get_MSG_Data() == g_pui8Msg1)
+        {
+            UARTprintf("Write Session is only allowed.\n");
+        }
+        else
+        {
 
-      }
+        }
     }
     else
     {

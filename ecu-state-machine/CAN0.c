@@ -30,30 +30,30 @@ volatile bool zero = 0;
 volatile bool one = 1;
 
 void InitCAN0(void)
-    {
-        /*Enable clock for GPIO Peripheral - Port B*/
-        SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+{
+    /*Enable clock for GPIO Peripheral - Port B*/
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 
-        /*PB4 is configure for Receiving, while PB5 is configured for Transmitting*/
-        GPIOPinConfigure((uint32_t)GPIO_PB4_CAN0RX);
-        GPIOPinConfigure((uint32_t)GPIO_PB5_CAN0TX);
-        GPIOPinTypeCAN((uint32_t)GPIO_PORTB_BASE, (uint8_t)GPIO_PIN_4 | (uint8_t)GPIO_PIN_5);
+    /*PB4 is configure for Receiving, while PB5 is configured for Transmitting*/
+    GPIOPinConfigure((uint32_t)GPIO_PB4_CAN0RX);
+    GPIOPinConfigure((uint32_t)GPIO_PB5_CAN0TX);
+    GPIOPinTypeCAN((uint32_t)GPIO_PORTB_BASE, (uint8_t)GPIO_PIN_4 | (uint8_t)GPIO_PIN_5);
 
-        /*Enable clock for CAN Peripheral - CAN0 Module*/
-        SysCtlPeripheralEnable(SYSCTL_PERIPH_CAN0);
+    /*Enable clock for CAN Peripheral - CAN0 Module*/
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_CAN0);
 
-        CANInit((uint32_t)CAN0_BASE);
-        CANBitRateSet((uint32_t)CAN0_BASE, SysCtlClockGet(), (uint32_t)500000);
+    CANInit((uint32_t)CAN0_BASE);
+    CANBitRateSet((uint32_t)CAN0_BASE, SysCtlClockGet(), (uint32_t)500000);
 
-        /*Enable CAN0 Interrupt*/
-        CANIntEnable((uint32_t)CAN0_BASE, (uint32_t)CAN_INT_MASTER | (uint32_t)CAN_INT_ERROR | (uint32_t)CAN_INT_STATUS);
+    /*Enable CAN0 Interrupt*/
+    CANIntEnable((uint32_t)CAN0_BASE, (uint32_t)CAN_INT_MASTER | (uint32_t)CAN_INT_ERROR | (uint32_t)CAN_INT_STATUS);
 
-        /*Enable Global Interrupt*/
-        IntEnable((uint32_t)INT_CAN0);
+    /*Enable Global Interrupt*/
+    IntEnable((uint32_t)INT_CAN0);
 
-        /*Enable CAN Peripheral - CAN0 Module*/
-        CANEnable((uint32_t)CAN0_BASE);
-    }
+    /*Enable CAN Peripheral - CAN0 Module*/
+    CANEnable((uint32_t)CAN0_BASE);
+}
 
 void CANIntHandler(void)
 {
@@ -93,12 +93,12 @@ void CANIntHandler(void)
 void Check_Err (void)
 {
     if(g_bErrFlag)
-  {
-      UARTprintf(" error - cable connected?\n");
-  }
-  else
-  {
-  }
+    {
+        UARTprintf(" error - cable connected?\n");
+    }
+    else
+    {
+    }
 }
 
 void Send_State (uint32_t MsgID, const char *LED)
@@ -134,13 +134,13 @@ void Send_Dir(uint32_t MsgID,const char *Dir)
 
     if ( !(strcmp(Dir , "CW"))) /*Direction is Clockwise*/
     {
-    g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg4);
-    g_sCANMsg.pui8MsgData = &g_pui8Msg4;
+        g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg4);
+        g_sCANMsg.pui8MsgData = &g_pui8Msg4;
     }
     else if ( !(strcmp(Dir , "CCW"))) /*Direction is Counter Clockwise*/
     {
-    g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg5);
-    g_sCANMsg.pui8MsgData = &g_pui8Msg5;
+        g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg5);
+        g_sCANMsg.pui8MsgData = &g_pui8Msg5;
     }
 
     CANMessageSet((uint32_t)CAN0_BASE, (uint32_t)1, &g_sCANMsg, MSG_OBJ_TYPE_TX); /*Sending Direction in a CAN frame*/
@@ -153,15 +153,15 @@ void Send_Session (uint32_t MsgID, int Ctrl)
     g_sCANMsg.ui32Flags = (uint32_t)MSG_OBJ_TX_INT_ENABLE;
 
     if ( Ctrl == 0) /*Session Control is Default*/
-      {
+    {
         g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg0);
         g_sCANMsg.pui8MsgData = &g_pui8Msg0;
-      }
-      else if (Ctrl == 1) /*Session Control is Extended*/
-      {
-          g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg1);
-          g_sCANMsg.pui8MsgData = &g_pui8Msg1;
-      }
+    }
+    else if (Ctrl == 1) /*Session Control is Extended*/
+    {
+        g_sCANMsg.ui32MsgLen = sizeof(g_pui8Msg1);
+        g_sCANMsg.pui8MsgData = &g_pui8Msg1;
+    }
 
     CANMessageSet((uint32_t)CAN0_BASE, (uint32_t)1, &g_sCANMsg, MSG_OBJ_TYPE_TX); /*Sending Session Control in a CAN frame*/
 }

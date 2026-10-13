@@ -50,27 +50,27 @@ void Switches_Interrupt_Init (void)
 
 void Switches_HANDLER (void)
 {
-   uint32_t sw1 = (uint32_t)GPIO_PORTF_MIS_R & (uint32_t)GPIO_INT_PIN_0;
-   uint32_t sw2 = GPIO_PORTF_MIS_R & (uint32_t)GPIO_INT_PIN_4;
+    uint32_t sw1 = (uint32_t)GPIO_PORTF_MIS_R & (uint32_t)GPIO_INT_PIN_0;
+    uint32_t sw2 = GPIO_PORTF_MIS_R & (uint32_t)GPIO_INT_PIN_4;
     if (sw1 == set) /*if interrupt occurs on sw1*/
     {
         UARTprintf("SW1 (ClockWise) is Pressed.\n");
         Send_Command(obj2 , SW1_StateMachine, &g_pui8Msg1);
         DebouncingDelay ();
         if(g_bErrFlag)
-         {
-             UARTprintf(" error - cable connected?\n");
-         }
+        {
+            UARTprintf(" error - cable connected?\n");
+        }
     }
     else
     {
-         UARTprintf("SW2 (Counter ClockWise) is Pressed.\n");
-         Send_Command(obj2,SW2_StateMachine, &g_pui8Msg2);
-         DebouncingDelay();
-         if(g_bErrFlag)
-          {
-              UARTprintf(" error - cable connected?\n");
-          }
+        UARTprintf("SW2 (Counter ClockWise) is Pressed.\n");
+        Send_Command(obj2,SW2_StateMachine, &g_pui8Msg2);
+        DebouncingDelay();
+        if(g_bErrFlag)
+        {
+            UARTprintf(" error - cable connected?\n");
+        }
     }
     GPIOIntClear((uint32_t)GPIO_PORTF_BASE, (uint32_t)GPIO_INT_PIN_0|(uint32_t)GPIO_INT_PIN_4);
 }

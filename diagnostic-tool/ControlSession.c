@@ -17,19 +17,19 @@ void ControlSession (void)
     UARTprintf("%c\n",Order);
     if (Order=='0') /*Read/Default Session is only allowed*/
     {
-      Send_Command(obj2 , Control_Session , &g_pui8Msg0);
-      DelayTimeOut();
-      if (g_bRXFlag)
-      {
-          Receive(Get_MSG_ID());
-      }
-      else if (!(g_bRXFlag))
-      {
-          TimeOut();
-      }
-      else
-      {
-      }
+        Send_Command(obj2 , Control_Session , &g_pui8Msg0);
+        DelayTimeOut();
+        if (g_bRXFlag)
+        {
+            Receive(Get_MSG_ID());
+        }
+        else if (!(g_bRXFlag))
+        {
+            TimeOut();
+        }
+        else
+        {
+        }
     }
     else if (Order=='1') /*Write Session is only allowed*/
     {

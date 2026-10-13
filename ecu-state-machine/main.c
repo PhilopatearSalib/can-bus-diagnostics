@@ -53,9 +53,9 @@ void main(void)
                 Positive_Responses_Read(Get_MSG_Data(), &CW); /*Send Read State/Direction*/
             }
             else if ((Get_MSG_ID(Obj) == Write_ID) && (Ctrl == Extended_Ctrl)) /*Write in Extended Session*/
-           {
+            {
                 Positive_Response_Write(Get_MSG_Data(), &CW); /*Send Written State/Direction*/
-           }
+            }
             else if ((Get_MSG_ID(Obj) == Read_ID) && (Ctrl == Extended_Ctrl)) /*Read in Extended Session*/
             {
                 Negative_Response_Read(); /*Send that's not allowed to read in extended session*/

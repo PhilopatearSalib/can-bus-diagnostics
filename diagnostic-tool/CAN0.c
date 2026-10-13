@@ -31,16 +31,16 @@ uint32_t obj1 = 1;
 
 void Init_CAN(void)
 {
-  SysCtlPeripheralEnable((uint32_t)SYSCTL_PERIPH_GPIOB);
-  GPIOPinConfigure((uint32_t)GPIO_PB4_CAN0RX);
-  GPIOPinConfigure((uint32_t)GPIO_PB5_CAN0TX);
-  GPIOPinTypeCAN((uint32_t)GPIO_PORTB_BASE, (uint8_t)GPIO_PIN_4 | (uint8_t)GPIO_PIN_5);
-  SysCtlPeripheralEnable((uint32_t)SYSCTL_PERIPH_CAN0);
-  CANInit((uint32_t)CAN0_BASE);
-  CANBitRateSet((uint32_t)CAN0_BASE, (uint32_t)SysCtlClockGet(), (uint32_t)500000);
-  CANIntEnable((uint32_t)CAN0_BASE, (uint32_t)CAN_INT_MASTER | (uint32_t)CAN_INT_ERROR |(uint32_t) CAN_INT_STATUS);
-  IntEnable((uint32_t)INT_CAN0);
-  CANEnable((uint32_t)CAN0_BASE);
+    SysCtlPeripheralEnable((uint32_t)SYSCTL_PERIPH_GPIOB);
+    GPIOPinConfigure((uint32_t)GPIO_PB4_CAN0RX);
+    GPIOPinConfigure((uint32_t)GPIO_PB5_CAN0TX);
+    GPIOPinTypeCAN((uint32_t)GPIO_PORTB_BASE, (uint8_t)GPIO_PIN_4 | (uint8_t)GPIO_PIN_5);
+    SysCtlPeripheralEnable((uint32_t)SYSCTL_PERIPH_CAN0);
+    CANInit((uint32_t)CAN0_BASE);
+    CANBitRateSet((uint32_t)CAN0_BASE, (uint32_t)SysCtlClockGet(), (uint32_t)500000);
+    CANIntEnable((uint32_t)CAN0_BASE, (uint32_t)CAN_INT_MASTER | (uint32_t)CAN_INT_ERROR |(uint32_t) CAN_INT_STATUS);
+    IntEnable((uint32_t)INT_CAN0);
+    CANEnable((uint32_t)CAN0_BASE);
 }
 void CANIntHandler(void)
 {
@@ -106,5 +106,5 @@ uint32_t Get_MSG_ID (void)
 
 uint8_t Get_MSG_Data (void)
 {
- return *(g_sCANMsgObject_Receive.pui8MsgData);
+    return *(g_sCANMsgObject_Receive.pui8MsgData);
 }
