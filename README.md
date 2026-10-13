@@ -158,10 +158,11 @@ can-bus-diagnostics/
 └── docs/
     ├── Final_Project_Report.pdf   Original 2019 report (static architecture, API, MISRA)
     ├── architecture.md            Layer diagrams for both nodes
-    └── protocol.md                Byte-level protocol and behaviour notes
+    ├── protocol.md                Byte-level protocol and behaviour notes
+    └── CHANGES.md                 Every change made since the 2019 submission
 ```
 
-The first commit contains the code exactly as submitted in 2019, without the TI files. Later commits are cosmetic: line endings, indentation and comment typos. They also fix two include lines and reconstruct `PositiveResponse.h`, which was missing from the original archive.
+The first commit contains the code exactly as submitted in 2019, without the TI files. Later commits are cosmetic: line endings, indentation and comment typos. They also fix two include lines and reconstruct `PositiveResponse.h`, which was missing from the original archive. Every change is listed in [docs/CHANGES.md](docs/CHANGES.md).
 
 ## Demo
 
