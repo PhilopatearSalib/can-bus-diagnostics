@@ -56,7 +56,7 @@ void Clockwise_StateMachine (int* prev_LED, uint8_t* CW)
             Turn_Off_LEDs();
             Turn_On_Blue_LEDs();
 
-            *prev_LED = Blue; /*BLue.*/
+            *prev_LED = Blue; /*Blue.*/
             SimpleDelay();
             break;
 

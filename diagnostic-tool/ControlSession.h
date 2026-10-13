@@ -21,7 +21,7 @@ extern void ControlSession (void);
 /*Function Name: ControlSession                      */
 /*Inputs: void                                       */
 /*Outputs: void                                      */
-/*Reentrancy: Non- Reentrant                         */
+/*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
 /*Description: Send Session Control Command and      */
 /*             waiting for a  Timeout in case of no  */

@@ -29,7 +29,7 @@ extern void InitConsole(void);
 /*Function Name: InitConsole                             */
 /*Inputs: void                                           */
 /*Outputs: void                                          */
-/*Reentrancy: Non- Reentrant                             */
+/*Reentrancy: Non-Reentrant                              */
 /*Synchronous: Synchronous                               */
 /*Description: Initialization of Port A and its UART0    */
 /*             module                                    */
@@ -39,7 +39,7 @@ extern void PrintCANMessageInfo(const tCANMsgObject *psCANMsg, uint32_t ui32MsgO
 /*Function Name: PrintCANMessageInfo                     */
 /*Inputs: tCANMsgObject *psCANMsg, uint32_t ui32MsgObj   */
 /*Outputs: void                                          */
-/*Reentrancy: Non- Reentrant                             */
+/*Reentrancy: Non-Reentrant                              */
 /*Synchronous: Synchronous                               */
 /*Description: Prints information of a CAN Message       */
 /*             *psCANMsg:pointer to CAN Message Structure*/

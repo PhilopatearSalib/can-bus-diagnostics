@@ -18,7 +18,7 @@ extern void Init_CAN(void);
 /*Function Name: Init_CAN                            */
 /*Inputs: void                                       */
 /*Outputs:void                                       */
-/*Reentrancy: Non- Reentrant                         */
+/*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
 /*Description: Initialize PortB and CAN0 module and  */
 /*             their interrupt                       */
@@ -28,7 +28,7 @@ extern void CANIntHandler(void);
 /*Function Name: CANIntHandler                       */
 /*Inputs: void                                       */
 /*Outputs:void                                       */
-/*Reentrancy: Non- Reentrant                         */
+/*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
 /*Description: Interrupt Handler of the CAN module   */
 /*             and flag checking for the two objects */

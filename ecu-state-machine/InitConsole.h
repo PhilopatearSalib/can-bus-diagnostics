@@ -29,7 +29,7 @@
 /*Function Name: InitConsole                         */
 /*Inputs: void                                       */
 /*Outputs:void                                       */
-/*Reentrancy: Non- Reentrant                         */
+/*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
 /*Description: Establishes PC-MCU UART Communication.*/
 /*****************************************************/

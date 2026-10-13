@@ -70,7 +70,7 @@ void main(void)
             }
             else if (Get_MSG_ID(Obj) == CW_ID)
             {
-                Clockwise_StateMachine (&prev_LED, &CW); /*Assign Counter Clockwise Direction to State Machine*/
+                Clockwise_StateMachine (&prev_LED, &CW); /*Assign Clockwise Direction to State Machine*/
             }
             else if (Get_MSG_ID(Obj) == Session_Control_ID) /*Session Control*/
             {

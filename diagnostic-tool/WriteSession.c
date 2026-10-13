@@ -89,7 +89,7 @@ void WriteSession(void)
     {
         Order = (char)UARTgetc();
         UARTprintf("%c\n",Order);
-        if (Order=='1')/*Set Direction to Clock wise*/
+        if (Order=='1')/*Set Direction to Clockwise*/
         {
             Send_Command(obj2,Write_Session, &g_pui8Msg4);
             DelayTimeOut();
@@ -107,7 +107,7 @@ void WriteSession(void)
 
             }
         }
-        else if (Order=='2')/*Set Direction to Counter Clock wise*/
+        else if (Order=='2')/*Set Direction to Counter Clockwise*/
         {
             Send_Command(obj2,Write_Session, &g_pui8Msg5);
             DelayTimeOut();

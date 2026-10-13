@@ -30,7 +30,7 @@
 /*Function Name: InitCAN0                            */
 /*Inputs: void                                       */
 /*Outputs: void                                      */
-/*Reentrant: Non-Reentrant                          */
+/*Reentrant: Non-Reentrant                           */
 /*Synchronous: Synchronous                           */
 /*Description: Initialize CAN0 Module                */
 /*****************************************************/
@@ -40,7 +40,7 @@ extern void InitCAN0(void);
 /*Function Name: CANIntHandler                       */
 /*Inputs: void                                       */
 /*Outputs: void                                      */
-/*Reentrant: Reentrant                              */
+/*Reentrant: Reentrant                               */
 /*Synchronous: Synchronous                           */
 /*Description: Interrupt CAN Handler. Detects if     */
 /*             an error occurred, sets receiving     */
@@ -53,7 +53,7 @@ extern void CANIntHandler(void);
 /*Function Name: Check_Err                           */
 /*Inputs: void                                       */
 /*Outputs: void                                      */
-/*Reentrant: Non-Reentrant                              */
+/*Reentrant: Non-Reentrant                           */
 /*Synchronous: Asynchronous                          */
 /*Description: If Error Flag is set by the CAN       */
 /*             handler, prints that.                 */
@@ -127,7 +127,7 @@ extern void Establishing_Getting_MSGs(void);
 /*Outputs: void                                      */
 /*Reentrant: Non-Reentrant                           */
 /*Synchronous: Synchronous                           */
-/*Description:Returns Message ID that's received on */
+/*Description:Returns Message ID that's received on  */
 /*            object number at ObjID.                */
 /*            Can't be called unless                 */
 /*            Establishing_Getting_MSGs() is called  */

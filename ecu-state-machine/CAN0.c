@@ -34,7 +34,7 @@ void InitCAN0(void)
     /*Enable clock for GPIO Peripheral - Port B*/
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 
-    /*PB4 is configure for Receiving, while PB5 is configured for Transmitting*/
+    /*PB4 is configured for Receiving, while PB5 is configured for Transmitting*/
     GPIOPinConfigure((uint32_t)GPIO_PB4_CAN0RX);
     GPIOPinConfigure((uint32_t)GPIO_PB5_CAN0TX);
     GPIOPinTypeCAN((uint32_t)GPIO_PORTB_BASE, (uint8_t)GPIO_PIN_4 | (uint8_t)GPIO_PIN_5);

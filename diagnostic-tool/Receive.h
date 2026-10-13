@@ -13,9 +13,9 @@ extern void Receive(uint32_t MsgID);
 /*Function Name: Receive                             */
 /*Inputs:uint32_t MsgID                              */
 /*Outputs: void                                      */
-/*Reentrancy: Non- Reentrant                         */
+/*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
-/*Description: Receiving el Response from Node 2 and */
+/*Description: Receiving the Response from Node 2 and*/
 /*             then Respond to the returned MsgID    */
 /*             and Data also it's Responsible for    */
 /*             applying the current active session   */

@@ -29,7 +29,7 @@
 /*Outputs: void                                      */
 /*Reentrancy: Non-Reentrant                          */
 /*Synchronous: Synchronous                           */
-/*Description: Delay for 1 second.                                */
+/*Description: Delay for 1 second.                   */
 /*****************************************************/
 extern void SimpleDelay(void);
 

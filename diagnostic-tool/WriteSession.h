@@ -20,7 +20,7 @@ extern void WriteSession(void);
 /*Function Name: WriteSession                         */
 /*Inputs: void                                        */
 /*Outputs: void                                       */
-/*Reentrancy: Non- Reentrant                          */
+/*Reentrancy: Non-Reentrant                           */
 /*Synchronous: Synchronous                            */
 /*Description:The Write function which is the Extended*/
 /*            session although it can be activated by */
