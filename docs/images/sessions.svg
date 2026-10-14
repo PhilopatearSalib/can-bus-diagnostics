@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="ti de"><title id="ti">Diagnostic sessions and service rules</title><desc id="de">In the default session, Read (0x22) gets positive response 0x62 and Write (0x2E) gets a negative response on 0x2E. In the extended session, Write gets positive response 0x6E and Read gets a negative response on 0x22. Session Control 0x10 switches sessions and is answered with 0x50. Step commands 0x31 and 0x32 work in both sessions with no response.</desc>
+<style>
+  .t  { font-family: -apple-system, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; fill: #1f2328; }
+  .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+  .h  { font-weight: 600; }
+  .mu { fill: #59636e; }
+  .box   { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1.5; }
+  .panel { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1.5; }
+  .node  { fill: #ffffff; stroke: #b4232f; stroke-width: 2; }
+  .ext   { fill: none; stroke: #8c959f; stroke-width: 1.5; stroke-dasharray: 6 4; }
+  .chip  { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1; }
+  .ln    { stroke: #59636e; stroke-width: 1.5; fill: none; }
+  .canh  { stroke: #d4a72c; stroke-width: 4; fill: none; }
+  .canl  { stroke: #2da44e; stroke-width: 4; fill: none; }
+  .canhT { fill: #9a6700; }
+  .canlT { fill: #1a7f37; }
+  .pos   { fill: #dafbe1; stroke: #1a7f37; stroke-width: 1; }
+  .neg   { fill: #ffebe9; stroke: #cf222e; stroke-width: 1; }
+  .neu   { fill: #f6f8fa; stroke: #8c959f; stroke-width: 1; }
+  .posT  { fill: #1a7f37; }
+  .negT  { fill: #cf222e; }
+  .acc   { fill: #b4232f; }
+  .arrowFill { fill: #59636e; }
+  @media (prefers-color-scheme: dark) {
+    .t  { fill: #e6edf3; }
+    .mu { fill: #9198a1; }
+    .box   { fill: #0d1117; stroke: #3d444d; }
+    .panel { fill: #151b23; stroke: #3d444d; }
+    .node  { fill: #0d1117; stroke: #e5534b; }
+    .ext   { stroke: #656c76; }
+    .chip  { fill: #212830; stroke: #3d444d; }
+    .ln    { stroke: #9198a1; }
+    .canhT { fill: #d29922; }
+    .canlT { fill: #3fb950; }
+    .pos   { fill: #12261e; stroke: #3fb950; }
+    .neg   { fill: #2d1517; stroke: #f85149; }
+    .neu   { fill: #212830; stroke: #656c76; }
+    .posT  { fill: #3fb950; }
+    .negT  { fill: #f85149; }
+    .acc   { fill: #e5534b; }
+    .arrowFill { fill: #9198a1; }
+  }
+</style><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowFill"/></marker></defs><rect x="40" y="100" width="400" height="250" rx="10" class="panel"/><text x="60" y="130" class="t h" font-size="16" text-anchor="start" >Default session</text><text x="60" y="150" class="t mu" font-size="12" text-anchor="start" >Active after reset</text><rect x="56" y="172" width="368" height="44" rx="7" class="box"/><text x="70" y="192" class="t m h" font-size="14" text-anchor="start" >0x22</text><text x="70" y="208" class="t mu" font-size="11.5" text-anchor="start" >Read</text><line x1="190" y1="194" x2="236" y2="194" class="ln" marker-end="url(#arr)"/><rect x="246" y="180" width="162" height="28" rx="14" class="pos"/><text x="327.0" y="199" class="t h posT" font-size="13" text-anchor="middle" >0x62  positive</text><rect x="56" y="228" width="368" height="44" rx="7" class="box"/><text x="70" y="248" class="t m h" font-size="14" text-anchor="start" >0x2E</text><text x="70" y="264" class="t mu" font-size="11.5" text-anchor="start" >Write</text><line x1="190" y1="250" x2="236" y2="250" class="ln" marker-end="url(#arr)"/><rect x="246" y="236" width="162" height="28" rx="14" class="neg"/><text x="327.0" y="255" class="t h negT" font-size="13" text-anchor="middle" >0x2E  negative</text><rect x="56" y="284" width="368" height="44" rx="7" class="box"/><text x="70" y="304" class="t m h" font-size="14" text-anchor="start" >0x31 / 0x32</text><text x="70" y="320" class="t mu" font-size="11.5" text-anchor="start" >Step LED</text><line x1="190" y1="306" x2="236" y2="306" class="ln" marker-end="url(#arr)"/><rect x="246" y="292" width="162" height="28" rx="14" class="neu"/><text x="327.0" y="311" class="t h mu" font-size="13" text-anchor="middle" >executed, no reply</text><rect x="520" y="100" width="400" height="250" rx="10" class="panel"/><text x="540" y="130" class="t h" font-size="16" text-anchor="start" >Extended session</text><text x="540" y="150" class="t mu" font-size="12" text-anchor="start" >Entered with 0x10, data 0x01</text><rect x="536" y="172" width="368" height="44" rx="7" class="box"/><text x="550" y="192" class="t m h" font-size="14" text-anchor="start" >0x22</text><text x="550" y="208" class="t mu" font-size="11.5" text-anchor="start" >Read</text><line x1="670" y1="194" x2="716" y2="194" class="ln" marker-end="url(#arr)"/><rect x="726" y="180" width="162" height="28" rx="14" class="neg"/><text x="807.0" y="199" class="t h negT" font-size="13" text-anchor="middle" >0x22  negative</text><rect x="536" y="228" width="368" height="44" rx="7" class="box"/><text x="550" y="248" class="t m h" font-size="14" text-anchor="start" >0x2E</text><text x="550" y="264" class="t mu" font-size="11.5" text-anchor="start" >Write</text><line x1="670" y1="250" x2="716" y2="250" class="ln" marker-end="url(#arr)"/><rect x="726" y="236" width="162" height="28" rx="14" class="pos"/><text x="807.0" y="255" class="t h posT" font-size="13" text-anchor="middle" >0x6E  positive</text><rect x="536" y="284" width="368" height="44" rx="7" class="box"/><text x="550" y="304" class="t m h" font-size="14" text-anchor="start" >0x31 / 0x32</text><text x="550" y="320" class="t mu" font-size="11.5" text-anchor="start" >Step LED</text><line x1="670" y1="306" x2="716" y2="306" class="ln" marker-end="url(#arr)"/><rect x="726" y="292" width="162" height="28" rx="14" class="neu"/><text x="807.0" y="311" class="t h mu" font-size="13" text-anchor="middle" >executed, no reply</text><path d="M 300 96 C 360 40, 600 40, 660 96" class="ln" marker-end="url(#arr)"/><text x="480" y="46" class="t m" font-size="12.5" text-anchor="middle" >0x10, data 0x01  →  reply 0x50, data 0x01</text><path d="M 660 354 C 600 396, 360 396, 300 354" class="ln" marker-end="url(#arr)"/><text x="480" y="416" class="t m" font-size="12.5" text-anchor="middle" >0x10, data 0x00  →  reply 0x50, data 0x00</text></svg>

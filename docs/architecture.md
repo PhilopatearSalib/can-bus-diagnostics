@@ -9,6 +9,8 @@ Both nodes use the same layered static architecture, described in the 2019 repor
 | **MCU abstraction** | TI TivaWare `driverlib` and `utils/uartstdio` (not part of this repository) |
 | **Peripherals** | TM4C123GH6PM on-chip CAN0, GPIO, UART0 and system control |
 
+![Layered architecture of both nodes](images/architecture.svg)
+
 The module-to-layer assignment follows the report's figures. The arrows below follow the `#include` and call relationships in the code. Direct `UARTprintf`/`UARTgetc` calls from the application modules are left out for readability.
 
 ## System overview

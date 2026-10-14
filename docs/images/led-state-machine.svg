@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" role="img" aria-labelledby="ti de"><title id="ti">RGB LED state machine on the ECU</title><desc id="de">Each 0x31 frame moves the LED one step clockwise: red to blue to green to red. Each 0x32 frame moves it one step counter-clockwise: red to green to blue to red.</desc>
+<style>
+  .t  { font-family: -apple-system, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; fill: #1f2328; }
+  .m  { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+  .h  { font-weight: 600; }
+  .mu { fill: #59636e; }
+  .box   { fill: #ffffff; stroke: #d1d9e0; stroke-width: 1.5; }
+  .panel { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1.5; }
+  .node  { fill: #ffffff; stroke: #b4232f; stroke-width: 2; }
+  .ext   { fill: none; stroke: #8c959f; stroke-width: 1.5; stroke-dasharray: 6 4; }
+  .chip  { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1; }
+  .ln    { stroke: #59636e; stroke-width: 1.5; fill: none; }
+  .canh  { stroke: #d4a72c; stroke-width: 4; fill: none; }
+  .canl  { stroke: #2da44e; stroke-width: 4; fill: none; }
+  .canhT { fill: #9a6700; }
+  .canlT { fill: #1a7f37; }
+  .pos   { fill: #dafbe1; stroke: #1a7f37; stroke-width: 1; }
+  .neg   { fill: #ffebe9; stroke: #cf222e; stroke-width: 1; }
+  .neu   { fill: #f6f8fa; stroke: #8c959f; stroke-width: 1; }
+  .posT  { fill: #1a7f37; }
+  .negT  { fill: #cf222e; }
+  .acc   { fill: #b4232f; }
+  .arrowFill { fill: #59636e; }
+  @media (prefers-color-scheme: dark) {
+    .t  { fill: #e6edf3; }
+    .mu { fill: #9198a1; }
+    .box   { fill: #0d1117; stroke: #3d444d; }
+    .panel { fill: #151b23; stroke: #3d444d; }
+    .node  { fill: #0d1117; stroke: #e5534b; }
+    .ext   { stroke: #656c76; }
+    .chip  { fill: #212830; stroke: #3d444d; }
+    .ln    { stroke: #9198a1; }
+    .canhT { fill: #d29922; }
+    .canlT { fill: #3fb950; }
+    .pos   { fill: #12261e; stroke: #3fb950; }
+    .neg   { fill: #2d1517; stroke: #f85149; }
+    .neu   { fill: #212830; stroke: #656c76; }
+    .posT  { fill: #3fb950; }
+    .negT  { fill: #f85149; }
+    .acc   { fill: #e5534b; }
+    .arrowFill { fill: #9198a1; }
+  }
+</style><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowFill"/></marker></defs><path d="M 277.9 81.4 Q 346.4 129.0 367.4 187.2" class="ln"  marker-end="url(#arr)"/><path d="M 347.1 230.6 Q 250.0 256.0 155.8 231.4" class="ln"  marker-end="url(#arr)"/><path d="M 131.5 190.0 Q 153.6 129.0 219.6 83.1" class="ln"  marker-end="url(#arr)"/><path d="M 234.7 92.3 Q 205.3 150.4 148.3 198.2" class="ln" stroke-dasharray="5 4" marker-end="url(#arr)"/><path d="M 153.5 216.3 Q 250.0 200.0 343.5 215.8" class="ln" stroke-dasharray="5 4" marker-end="url(#arr)"/><path d="M 354.0 200.2 Q 294.7 150.4 266.7 95.0" class="ln" stroke-dasharray="5 4" marker-end="url(#arr)"/><circle cx="250" cy="62" r="30" fill="#cf222e" fill-opacity="0.16" stroke="#cf222e" stroke-width="2.5"/><circle cx="250" cy="62" r="9" fill="#cf222e"/><text x="250" y="22" class="t h" font-size="14" text-anchor="middle" >Red</text><circle cx="380" cy="222" r="30" fill="#0969da" fill-opacity="0.16" stroke="#0969da" stroke-width="2.5"/><circle cx="380" cy="222" r="9" fill="#0969da"/><text x="380" y="276" class="t h" font-size="14" text-anchor="middle" >Blue</text><circle cx="120" cy="222" r="30" fill="#1a7f37" fill-opacity="0.16" stroke="#1a7f37" stroke-width="2.5"/><circle cx="120" cy="222" r="9" fill="#1a7f37"/><text x="120" y="276" class="t h" font-size="14" text-anchor="middle" >Green</text><line x1="470" y1="110" x2="514" y2="110" class="ln" marker-end="url(#arr)"/><text x="526" y="107" class="t m h" font-size="13" text-anchor="start" >0x31  clockwise</text><text x="526" y="125" class="t mu" font-size="12" text-anchor="start" >red, blue, green</text><line x1="470" y1="168" x2="514" y2="168" class="ln" stroke-dasharray="5 4" marker-end="url(#arr)"/><text x="526" y="165" class="t m h" font-size="13" text-anchor="start" >0x32  counter-clockwise</text><text x="526" y="183" class="t mu" font-size="12" text-anchor="start" >red, green, blue</text><text x="470" y="236" class="t mu" font-size="12" text-anchor="start" >One step per frame, in either session.</text></svg>

@@ -32,6 +32,7 @@ The author lines in each original file header, and the report's cover page, cred
 | `docs/protocol.md` | Byte-level protocol, session rules, and notes on observed behaviour, all taken from the code |
 | `docs/CHANGES.md` | This file |
 | `docs/images/hardware.jpg` | Photo of the two boards, cropped from a frame of the 2019 demo video |
+| `docs/images/*.svg` | README figures: system overview, layered architecture, session rules, LED state machine. Drawn from the code and the report; they adapt to GitHub's light and dark themes |
 | `.gitignore` | Keeps CCS build output, workspace files and TI files out of the repository |
 | `.gitattributes` | Stores text files with LF line endings |
 | `ecu-state-machine/PositiveResponse.h` | **Reconstructed.** The original header was missing from the 2019 archive, but `main.c` and `PositiveResponse.c` include it. It declares only the three functions defined in `PositiveResponse.c` and is marked in the file as reconstructed in 2026 |

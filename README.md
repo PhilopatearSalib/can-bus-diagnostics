@@ -16,25 +16,20 @@ B.Sc. course project for *Automotive Embedded Networking*, Ain Shams University,
 
 ## System overview
 
-```mermaid
-flowchart LR
-    PC1["PC serial terminal"] -- "UART0 115200 8N1<br/>(USB virtual COM port)" --> T
-    SW["Push buttons PF0 / PF4"] --> T
-    T["Node 1: Diagnostic Tool<br/>EK-TM4C123GXL"] -- "PB4 RX / PB5 TX" --> X1["CAN transceiver"]
-    X1 ===|"CAN bus 500 kbit/s<br/>120 Ω at each end"| X2["CAN transceiver"]
-    X2 -- "PB4 RX / PB5 TX" --> E["Node 2: ECU (CAN State Machine)<br/>EK-TM4C123GXL"]
-    E --> LED["RGB LED<br/>red → blue → green"]
-    E -- "UART0 log" --> PC2["PC serial terminal"]
-```
+![System overview: two LaunchPads, each with a CAN transceiver, on a 500 kbit/s CAN bus terminated with 120 Ω at both ends](docs/images/system-overview.svg)
 
 - **Node 1, Diagnostic Tool (`diagnostic-tool/`).** Takes commands from a UART console and the on-board buttons, sends CAN requests, and prints each response, or `Time Out` if none arrives within about 500 ms.
 - **Node 2, ECU (`ecu-state-machine/`).** Steps an RGB LED state machine clockwise or counter-clockwise and answers diagnostic requests according to the active session.
 
-Layer diagrams for both nodes are in [docs/architecture.md](docs/architecture.md).
+Both nodes use the same layered architecture. The module dependencies are detailed in [docs/architecture.md](docs/architecture.md).
+
+![Layered architecture: application, ECU abstraction, TivaWare MCU abstraction and peripherals for both nodes](docs/images/architecture.svg)
 
 ## Protocol
 
 The service ID travels as the 11-bit CAN identifier, and the first payload byte carries the parameter. The full byte-level tables are in [docs/protocol.md](docs/protocol.md).
+
+![Session rules: Read is allowed in the default session, Write in the extended session, and Session Control 0x10 switches between them](docs/images/sessions.svg)
 
 | Service | Request ID | Allowed session | Positive response | Negative response |
 |---|---|---|---|---|
@@ -138,6 +133,8 @@ The Diagnostic Tool prints the response, for example `State is Green.`, `Red is 
 | **PF4**, printed **SW1** on the LaunchPad | `0x32` | One step counter-clockwise: red → green → blue → red |
 
 The firmware's own messages call PF0 "SW1" and PF4 "SW2", the reverse of the board's printed labels.
+
+![LED state machine: 0x31 steps red, blue, green; 0x32 steps red, green, blue](docs/images/led-state-machine.svg)
 
 Each button press moves the LED by one step. The step commands are accepted in either session and get no response. Some quirks of the original code, such as the first step after reset, are listed in [docs/protocol.md](docs/protocol.md#notes-on-observed-behaviour). They were deliberately left unchanged.
 
